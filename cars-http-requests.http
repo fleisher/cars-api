@@ -1,0 +1,45 @@
+### Получение списка машин
+GET /api/v1/cars
+Host: localhost:8080
+
+### Получение машины по id
+GET /api/v1/cars/1
+Host: localhost:8080
+
+### Получения машин с фильтрацией по свойству
+GET /api/v1/cars?color=White
+Host: localhost:8080
+
+### Создание машины
+POST /api/v1/cars
+Host: localhost:8080
+Content-Type: application/json
+X-Request-ID: 94e0d388-6a12-41d6-a85e-f5f0d93da223
+
+{
+  "brand": "Opel",
+  "color": "Black",
+  "yearProduction": 2013
+}
+
+### Полное обновление машины
+PUT /api/v1/cars/1
+Host: localhost:8080
+Content-Type: application/json
+
+{
+  "brand": "Kia",
+  "color": "White",
+  "yearProduction": 2015
+}
+
+### Частичное обновление машины
+PATCH /api/v1/cars/1
+Host: localhost:8080
+Content-Type: application/json
+
+[{ "op": "replace", "path": "/color", "value": "Red" }]
+
+### Удаление машины по id
+DELETE /api/v1/cars/3
+Host: localhost:8080
